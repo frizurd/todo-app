@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Odot</title>
+  <title>DOTO</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,7 +12,15 @@
   <h1><%= link_to "DOTO", root_path %></h1>
   <ul>
     <li><%= link_to "Todo Lists", todo_lists_path %></li>
-    <li><%= link_to "Sign Up", new_user_path %></li>
+
+    <% if logged_in? %>
+        <li><%= link_to "Profile", current_user %></li>
+        <li><%= link_to "Log Out", logout_path, method: :delete %></li>
+    <% else %>
+        <li><%= link_to "Log in", login_path %></li>
+        <li><%= link_to "Sign Up", new_user_path %></li>
+    <% end %>
+
   </ul>
   <br class="clear">
 </div>

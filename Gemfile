@@ -15,17 +15,14 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
-
   gem 'web-console', '~> 2.0'
-
   gem 'spring'
-end
-
-group :development, :test do
   gem 'rspec-rails', '~> 2.0'
+  gem 'factory_girl_rails', '~> 4.0'
 end
 
 group :test do
   gem 'capybara', '~> 2.1.0'
+  gem 'capybara-email', '~> 2.2.0'
   gem 'shoulda-matchers', '~> 2.8.0'
 end
