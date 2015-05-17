@@ -8,7 +8,8 @@ class PasswordResetsController < ApplicationController
     user = User.find_by(email: params[:email])
     if user
       user.generate_password_reset_token!
-      Notifier.password_reset(user).deliver
+      #Notifier.password_reset(user).deliver
+      ModelMailer.new_record_notification(user).deliver
       flash[:success] = "Password reset instruction sent, check yo mail!"
       redirect_to login_path
     else
