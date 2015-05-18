@@ -1,6 +1,6 @@
 <%= title "Todo Lists" %>
 
-<ul class="todo-list no-bullet">
+<ul class="list todo-list no-bullet">
   <% @todo_lists.each do |todo_list| %>
 
       <li id="<%= dom_id(todo_list) %>" class="clearfix">
