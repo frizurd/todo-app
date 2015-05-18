@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DOTO</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag "vendor/modernizr" %>
-  <%= csrf_meta_tags %>
+  <title>DOTO's</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "vendor/modernizr" %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
 </head>
 <body>
 
@@ -19,14 +20,26 @@
 
 <header class="row global-header">
   <div class="small-12 small-centered medium-8 medium-centered large-5 large-centered columns">
-    <%= link_to "Todo Lists", todo_lists_path %>
-
     <% if logged_in? %>
-        <%= link_to "Profile", current_user %>
-        <%= link_to "Log Out", logout_path, method: :delete %>
+        <div class="small-4 columns header-icon">
+          <%= link_to "Sign Out", logout_path, method: :delete, class: "icon-signout hide-text" %>
+        </div>
+        <div class="small-4 columns">
+          <h1 class="logo"><%= link_to "Odot", todo_lists_path, class: "hide-text" %></h1>
+        </div>
+        <div class="small-4 columns header-icon">
+          <a href="#" class="icon-new right hide-text">Add Item</a>
+        </div>
     <% else %>
-        <%= link_to "Log in", login_path %>
-        <%= link_to "Sign Up", new_user_path %>
+        <div class="small-4 columns header-icon">
+          <%= link_to "Sign In", new_user_session_path %>
+          <%= link_to "Sign Up", new_user_path %>
+        </div>
+        <div class="small-4 columns">
+          <h1 class="logo"><%= link_to "Odot", root_path, class: "hide-text" %></h1>
+        </div>
+        <div class="small-4 columns header-icon">
+        </div>
     <% end %>
   </div>
 </header>
@@ -39,7 +52,7 @@
 
 <footer class="row">
   <div class="small-12 small-centered medium-8 medium-centered large-5 large-centered columns text-center">
-    <% if logged_in?%>
+    <% if logged_in? %>
         <%= link_to "Settings", edit_user_path(current_user) %>
     <% end %>
   </div>
