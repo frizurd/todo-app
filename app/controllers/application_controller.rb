@@ -8,6 +8,11 @@ class ApplicationController < ActionController::Base
   rescue_from ActiveSupport::MessageVerifier::InvalidSignature, with: :render_error
 
   private
+  def go_back_link_to(path)
+    @go_back_link_to ||= path
+    @go_back_link_to
+  end
+
   def render_404
     render file: 'public/404.html', status: :not_found, layout: false
   end
