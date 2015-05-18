@@ -1,11 +1,22 @@
-// Place all the styles related to the todo-items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.checked, .unchecked {
+  background-color: $orange;
+  border-radius: 100%;
+  background-size: 70%
+}
 
-table.todo_items {
-  width :100%;
+.checkmark {
+  padding: 0;
+}
 
-  th {
-    text-align: left;
-  }
+.checkmark a {
+  margin-left: 0.9375rem;
+  margin-top: 10px;
+}
+
+.todo-content {
+  margin-top: 7px;
+}
+
+.unchecked {
+  background-image: none;
 }
