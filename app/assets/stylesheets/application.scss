@@ -19,6 +19,8 @@
 @import 'modules/helpers';
 @import 'partials/icons';
 @import 'partials/header';
+@import 'partials/footer';
+@import 'partials/forms';
 @import 'partials/lists';
 @import 'partials/todo_lists';
 @import 'partials/todo_items';
@@ -29,18 +31,15 @@ div.alert {
 }
 
 div.flash.success {
-    border: 2px solid green;
-    color: green;
+    color: white;
 }
 
 div.flash.error {
-    border: 2px solid red;
-    color: red;
+    color: white;
 }
 
 div.flash.notice {
-    border: 2px solid blue;
-    color: blue;
+    color: white;
 }
 
 .clear { clear: both; }
