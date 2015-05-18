@@ -1,72 +1,12 @@
 <%= title "Register For DOTO's" %>
 
-<%= form_for(@user) do |f| %>
-    <% if @user.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+<%= form_for(@user, builder: FoundationFormBuilder) do |f| %>
 
-          <ul>
-            <% @user.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.label :first_name %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.text_field :first_name %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.label :last_name %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.text_field :last_name %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.label :email %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.text_field :email %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.label :password %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.password_field :password %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.label :password_confirmation, "Password (again)" %>
-      </div>
-    </div>
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.password_field :password_confirmation %>
-      </div>
-    </div>
-
-    <div class="row">
-      <div class="small-12 columns">
-        <%= f.submit "Sign Up", class: "button radius expand" %>
-      </div>
-    </div>
+    <%= f.text_field :first_name, autofocus: 'autofocus' %>
+    <%= f.text_field :last_name %>
+    <%= f.email_field :email %>
+    <%= f.password_field :password %>
+    <%= f.password_field :password_confirmation %>
+    <%= f.submit "Sign Up" %>
 
 <% end %>

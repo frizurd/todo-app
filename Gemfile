@@ -11,7 +11,9 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'tzinfo-data'
 gem 'jbuilder', '~> 2.0'
+
 gem 'foundation-rails', '~> 5.5.2.1'
+gem 'font-awesome-rails', '~> 4.3.0.0'
 
 group :development do
   gem 'quiet_assets', '~> 1.1.0'
