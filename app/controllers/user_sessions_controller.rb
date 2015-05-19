@@ -25,7 +25,7 @@ class UserSessionsController < ApplicationController
     cookies.delete(:remember_me_token)
 
     @current_user = nil
-    flash[:success] = "You are now logged out"
+    flash[:success] = "You are now logged out."
     redirect_to root_path
   end
 end
