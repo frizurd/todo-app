@@ -13,4 +13,10 @@ class ModelMailer < ApplicationMailer
     mail to: "#{user.first_name} #{user.last_name} <#{user.email}>",
          subject: "Reset Your Password On DOTO."
   end
+
+  def todo_list(todo_list, destination)
+    @user = todo_list.user
+    @todo_list = todo_list
+    mail(to: destination, subject: "#{@user.first_name} sent you a todo list")
+  end
 end

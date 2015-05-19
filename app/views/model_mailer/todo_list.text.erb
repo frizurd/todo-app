@@ -1,0 +1,12 @@
+<%= @user.first_name %> sent you a todo list from DOTO's
+
+<%= @todo_list.title %>
+
+<% @todo_list.todo_items.each do |todo_item| %>
+
+    <%= todo_item.content %>
+
+<% end %>
+
+<3,
+DOTO's

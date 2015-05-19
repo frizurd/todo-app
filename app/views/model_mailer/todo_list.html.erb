@@ -1,0 +1,16 @@
+<p><%= @user.first_name %> sent you a todo list from DOTO's</p>
+
+<h3><%= @todo_list.title %></h3>
+
+<ul>
+<% @todo_list.todo_items.each do |todo_item| %>
+
+    <li><%= todo_item.content %></li>
+
+<% end %>
+</ul>
+
+<p>
+  <3,<br/>
+  DOTO's
+</p>
